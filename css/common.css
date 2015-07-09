@@ -1,0 +1,338 @@
+@charset "utf-8";
+/* ===================================================================
+CSS information
+ file name  :  common.css
+ style info :  Basic styles used in every pages
+=================================================================== */
+
+
+body {
+    position: relative;
+    font-size: 16px;
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.4;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* clearfix --------------------------------------------------*/
+
+.clearfix { display: block; }
+.clearfix { display: inline-block; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both;
+}
+
+
+
+/* page top --------------------------------------------------*/
+
+#pagetop {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    right: 30px;
+    bottom: 35px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    z-index: 9999;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+
+
+/* header --------------------------------------------------*/
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+header { display: block; }
+header { display: inline-block; }
+
+header:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both;
+}
+
+header .logo {
+    float: left;
+    padding-top: 20px;
+}
+header .logo a {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #fff;
+}
+header .logo a span {
+    font-weight: 300;
+}
+
+.menu {
+    float: right;
+    padding-top: 22px;
+}
+
+.menu li {
+    display: inline-block;
+    margin-left: 23px;
+    font-size: 0.7rem;
+}
+
+.menu li a {
+    color: #fff;
+}
+
+/* main --------------------------------------------------*/
+
+.main_visual {
+    position: fixed;
+    width: 100%;
+    height: 500px;
+    background: url(../images/main_image.jpg);
+    background-size: cover;
+    background-position: 50% 0%;
+    /*top: 70px;*/ /*delete this style after*/
+    z-index: -1;
+}
+
+.main_copy {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.copy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -55px 0 0 -340px;
+}
+
+.big_copy {
+    color: #fff;
+    font-size: 4.4rem;
+    font-weight: 900;
+}
+.sub_copy {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+
+/* common parts --------------------------------------------------*/
+
+section {
+    padding: 60px 0;
+}
+
+.chapter_ttl {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 0.7rem;
+    border-bottom: 5px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+
+/* ABOUT --------------------------------------------------*/
+
+#about { background-color: #fff; }
+
+.prof_img {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: 50px auto 60px;
+}
+
+.prof_img img{
+    width: 284px;
+    height: 284px;
+    margin: -42px 0 0 -42px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.prof_txt {
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.skill h3 {
+    font-family: 'Great Vibes', Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 40px;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.skill p {
+    margin-top: 8px;
+}
+
+
+/* WORKS --------------------------------------------------*/
+
+#works { background-color: #111; }
+#works * { color: #fff; }
+#works .chapter_ttl { border-bottom: 5px solid #fff; }
+
+.work_examples {
+    margin-top: 50px;
+}
+
+.work_examples { display: block; }
+.work_examples { display: inline-block; }
+
+.work_examples:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both;
+}
+
+
+/*each works*/
+.work_box {
+    display: inline-block;
+    width: 230px;
+    margin: 0 30px;
+    position: relative;
+}
+
+.work_box .diamond {
+    display: block;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: relative;
+    top: 33px;
+    left: 35px;
+    box-sizing: border-box;
+}
+
+.work_box .diamond.miketokyo {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.work_box .diamond img {
+    width: 226px;
+    height: 226px;
+    margin: -33px 0 0 -33px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.project_name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    /*letter-spacing: 0.2rem;*/
+    margin: 85px 0 8px;
+}
+
+.explanation {
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* CONTACT --------------------------------------------------*/
+
+#contact { background-color: #fff; }
+
+.address {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin-top: 30px;
+    padding-left: 50px;
+    color: #000;
+    font-family: 'Crimson Text', Arial, sans-serif;
+    font-style: italic;
+    background: url(../images/email.svg) no-repeat;
+    background-size: 36px;
+    background-position: 0px 0px;
+}
+
+
+/* FOOTER --------------------------------------------------*/
+
+footer {
+    margin-top: 20px;
+    padding-bottom: 60px;
+}
+
+.social {
+    margin: 0 auto;
+}
+
+.social li {
+    display: inline-block;
+    margin: 0 5px;
+    width: 36px;
+    height: 36px;
+}
+.social li a {
+    display: block;
+}
