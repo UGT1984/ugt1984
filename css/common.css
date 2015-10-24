@@ -127,7 +127,7 @@ header .logo {
 /* wrapper --------------------------------------------------*/
 
 #wrapper {
-  padding: 0 50px;
+  padding: 0 50px 100px;
 }
 
 
@@ -152,7 +152,7 @@ header .logo {
 
 /* about me --------------------------------------------------*/
 
-#about {
+section {
   padding-top: 105px;
 }
 
@@ -170,7 +170,7 @@ header .logo {
 }
 
 #about .follow_text {
-  font-size: 0.78125rem;
+  font-size: 0.8125rem;
   margin-top:  32px;
 }
 
@@ -203,4 +203,109 @@ header .logo {
 }
 .social_text li:last-child a:after {
   display: none;
+}
+
+
+/* works --------------------------------------------------*/
+
+.work_container {
+  width: 100%;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 35px 0;
+  line-height: 1;
+}
+.work_container.chatcast {
+  margin-top: 15px;
+}
+
+.work_container a {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex;
+}
+
+.work_container .image {
+  width: 300px;
+  height: 70px;
+  margin-right: 35px;
+}
+
+.work_container .info {
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  flex: 1;
+}
+
+.work_container .info time {
+  font-size: 0.75rem;
+}
+
+.work_container .info h3 {
+  font-weight: bold;
+  font-size: 1.625rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-top: 6px;
+}
+
+.work_container .info .category,
+.work_container .info .role {
+  display: inline-block;
+  font-size: 0.8125rem;
+  margin-top: 8px;
+}
+.work_container .info .category {
+  margin-right: 9px;
+}
+
+/* each work image */
+.work_container.chatcast .image {
+  background: url(../images/img_chatcast.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.lifeclips .image {
+  background: url(../images/img_lifeclips.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.miketokyo .image {
+  background: url(../images/img_miketokyo.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.civicforce .image {
+  background: url(../images/img_civicforce.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.dnpfinechemical .image {
+  background: url(../images/img_dnpfinechemical.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.nba2kallstars .image {
+  background: url(../images/img_nba2kallstars.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+.work_container.mlbstarscollection .image {
+  background: url(../images/img_mlbstarscollection.jpg) no-repeat;
+  background-size: 350px 70px;
+  background-position: -25px 0;
+}
+
+/* view project */
+.work_container .view_project {
+  float: right;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 70px;
+}
+
+.work_container .view_project .arrow {
+  display: inline-block;
+  width: 14px;
+  vertical-align: -6px;
+  margin-left: 14px;
 }
