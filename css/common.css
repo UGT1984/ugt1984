@@ -294,7 +294,8 @@ section {
   background-position: -25px 0;
 }
 
-/* view project */
+/* paginator --------------------------------------------------*/
+
 .page_jump {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -328,9 +329,12 @@ section {
   float: right;
   cursor: pointer;
 }
-
 .view_project {
   float: right;
+}
+
+.nolink {
+  opacity: 0.2;
 }
 
 /* contact --------------------------------------------------*/
