@@ -121,6 +121,28 @@ header .logo {
 .menu li a {
   color: #000;
   font-family: 'Montserrat', Arial, sans-serif;
+  position: relative;
+}
+.menu li a:hover:after {
+  width: 105%;
+  -webkit-transition: width 0.2s ease-in;
+  -moz-transition: width 0.2s ease-in;
+  -ms-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+.menu li a:after {
+  content: '';
+  display: block;
+  background-color: #d0b669;
+  position: absolute;
+  top: 7px;
+  left: -1px;
+  width: 0;
+  height: 3px;
+  -webkit-transition: width 0.25s ease-in;
+  -moz-transition: width 0.25s ease-in;
+  -ms-transition: width 0.25s ease-in;
+  transition: width 0.25s ease-in;
 }
 
 
@@ -188,6 +210,17 @@ section {
   font-family: 'Montserrat', Arial, sans-serif;
   position: relative;
   margin-right: 44px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.social_text li a:hover {
+  color: #d0b669;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .social_text li a:after {

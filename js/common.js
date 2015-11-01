@@ -28,19 +28,4 @@ $(document).ready(function(){
 		});
 	});
 
-	// Scroll to anchor
-	$(".menu li a")
-		.on("click", function(event){
-			// [TODO] Rethink about menu UX
-			// event.preventDefault();
-			// var dest = $(this).attr('href');
-			// scrollToSection(dest);
-		})
-		.mouseover(function(){
-			$(this).addClass("menu_on");
-		})
-		.mouseout(function(){
-			$(this).removeClass("menu_on");
-		});
-
 });
