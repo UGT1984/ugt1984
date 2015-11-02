@@ -29,18 +29,12 @@ $(document).ready(function(){
 	});
 
 	// Scroll to anchor
-	$(".menu li a")
-		.on("click", function(event){
-			// [TODO] Rethink about menu UX
-			// event.preventDefault();
-			// var dest = $(this).attr('href');
-			// scrollToSection(dest);
+	$(".work_container")
+		.mouseenter(function(){
+			$(this).find(".view_project").addClass("view_on");
 		})
-		.mouseover(function(){
-			$(this).addClass("menu_on");
-		})
-		.mouseout(function(){
-			$(this).removeClass("menu_on");
+		.mouseleave(function(){
+			$(this).find(".view_project").removeClass("view_on");
 		});
 
 });
