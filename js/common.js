@@ -28,4 +28,13 @@ $(document).ready(function(){
 		});
 	});
 
+	// Scroll to anchor
+	$(".work_container")
+		.mouseenter(function(){
+			$(this).find(".view_project").addClass("view_on");
+		})
+		.mouseleave(function(){
+			$(this).find(".view_project").removeClass("view_on");
+		});
+
 });

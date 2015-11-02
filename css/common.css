@@ -244,17 +244,49 @@ section {
 .work_container {
   width: 100%;
   border-bottom: 1px solid #dcdcdc;
-  padding: 35px 0;
   line-height: 1;
+  position: relative;
 }
 .work_container.chatcast {
-  margin-top: 15px;
+  margin-top: 20px;
+}
+
+.work_container:after {
+  content: '';
+  display: block;
+  background-color: #000;
+  width: 100%;
+  height: 0;
+  padding: 0 50px;
+  position: absolute;
+  bottom: 0;
+  left: -50px;
+  z-index: -99;
+  -webkit-transition: height 0.1s ease-in;
+  -moz-transition: height 0.1s ease-in;
+  -ms-transition: height 0.1s ease-in;
+  transition: height 0.1s ease-in;
+}
+.work_container:hover:after {
+  height: 100%;
+  -webkit-transition: height 0.2s ease-in;
+  -moz-transition: height 0.2s ease-in;
+  -ms-transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in;
+}
+.work_container:hover .info {
+  color: #fff;
+  -webkit-transition: color 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in;
+  -ms-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in;
 }
 
 .work_container a {
   display: -webkit-flex;
   display: -moz-flex;
   display: flex;
+  padding: 35px 0;
 }
 
 .work_container .image {
@@ -267,6 +299,10 @@ section {
   -webkit-flex: 1;
   -moz-flex: 1;
   flex: 1;
+  -webkit-transition: color 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in;
+  transition: color 0.1s ease-in;
 }
 
 .work_container .info time {
@@ -294,37 +330,37 @@ section {
 .work_container.chatcast .image {
   background: url(../images/img_chatcast.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.lifeclips .image {
   background: url(../images/img_lifeclips.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.miketokyo .image {
   background: url(../images/img_miketokyo.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.civicforce .image {
   background: url(../images/img_civicforce.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.dnpfinechemical .image {
   background: url(../images/img_dnpfinechemical.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.nba2kallstars .image {
   background: url(../images/img_nba2kallstars.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 .work_container.mlbstarscollection .image {
   background: url(../images/img_mlbstarscollection.jpg) no-repeat;
   background-size: 350px 70px;
-  background-position: -25px 0;
+  background-position: center;
 }
 
 /* paginator --------------------------------------------------*/
@@ -351,7 +387,38 @@ section {
 .previous {
   float: left;
   cursor: pointer;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
+.previous:hover {
+  -webkit-transform: translateX(-10px);
+  -moz-transform: translateX(-10px);
+  -ms-transform: translateX(-10px);
+  transform: translateX(-10px);
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.previous:hover a,
+.next:hover a {
+  color: #d0b669;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+.previous:hover svg,
+.next:hover svg {
+  fill: #d0b669;
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
 .previous .arrow {
   margin: 0 14px 0 0;
   -webkit-transform: scaleX(-1);
@@ -362,13 +429,40 @@ section {
   float: right;
   cursor: pointer;
 }
+.next:hover {
+  -webkit-transform: translateX(10px);
+  -moz-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+  -webkit-transition: all 0.1s ease-in;
+  -moz-transition: all 0.1s ease-in;
+  -ms-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
 .view_project {
   float: right;
+  opacity: 0;
+  color: #d0b669;
+}
+.view_project svg {
+  fill: #d0b669;
 }
 
 .nolink {
   opacity: 0.2;
+  transition: none !important;
 }
+.nolink:hover {
+  transform: translateX(0);
+  transition: none !important;
+}
+.nolink:hover a {
+  color: #000;
+}
+.nolink:hover svg {
+  fill: #000;
+}
+
 
 /* contact --------------------------------------------------*/
 
@@ -378,12 +472,30 @@ section {
 }
 
 .address {
-  display: block;
+  display: inline-block;
   font-size: 1.875rem;
   font-weight: bold;
   font-family: 'Playfair Display', Arial, sans-serif;
   font-style: italic;
   margin-top: 30px;
+}
+.address:after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 1px;
+  background-color: #000;
+  -webkit-transition: width 0.2s ease-in;
+  -moz-transition: width 0.2s ease-in;
+  -ms-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+.address:hover:after {
+  width: 100%;
+  -webkit-transition: width 0.2s ease-in;
+  -moz-transition: width 0.2s ease-in;
+  -ms-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
 }
 
 .social_icon {
@@ -395,13 +507,31 @@ section {
   margin-right: 16px;
 }
 
+.social_icon li a {
+  display: block;
+  position: relative;
+  top: 0;
+  -webkit-transition: all 0.08s ease-in;
+  -moz-transition: all 0.08s ease-in;
+  -ms-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+.social_icon li a:hover {
+  position: relative;
+  top: -5px;
+  -webkit-transition: all 0.08s ease-in;
+  -moz-transition: all 0.08s ease-in;
+  -ms-transition: all 0.08s ease-in;
+  transition: all 0.08s ease-in;
+}
+
 .social_icon  img {
   width: 24px;
 }
 
 
 
-/* eorks --------------------------------------------------*/
+/* work --------------------------------------------------*/
 
 .work_detail {
   padding-top: 105px;
