@@ -37,14 +37,63 @@ $(document).ready(function(){
 			$(this).find(".view_project").removeClass("view_on");
 		});
 
-	$(".menu_icon").on("click",function(){
-		$(".menu_shutter").toggle().height(window.outerHeight).width(window.outerWidth);
 
-		var menuHeight = $(".menu_shutter .menu").height();
-		$(".menu_shutter .menu").css("marginTop", -menuHeight/2 + "px");
-		$(".menu_shutter a").on("click", function(){
-			$(".menu_shutter").hide();
-		})
-	})
+	// Open menu
+	$("#menu_icon").on("click",function(){
+		var $icon = $(this);
+		var $shutter = $(".menu_shutter");
+		var $menu = $(".menu_shutter .menu");
+		var $background = $(".bg_shutter");
+		var $menuLink = $(".menu_link");
+
+		var screenWidth = screen.width;
+		var screenHeight = screen.height;
+
+		$background.css("top", -screenHeight-screenWidth);
+
+		// Open
+		var menuOpen = function(){
+			$shutter.show();
+			var menuHeight = $menu.height();
+			$shutter.width(screenWidth).height(screenHeight);
+			setTimeout(function(){
+				$menu.css({
+						"marginTop": -menuHeight/2,
+						"opacity": 1,
+						"transform": "translateX(0)"
+					});
+	    },200);
+			$background.css("top", -screenWidth/2).height(screenHeight + screenWidth);
+			$icon.attr("status", "open");
+
+			// no scroll
+			$(window).on("touchmove.noScroll", function(event){
+				event.preventDefault();
+			})
+		};
+
+		// Close
+		var menuClose = function(){
+			$menu.css({
+					"opacity": 0,
+					"transform": "translateX(30px)"
+			});
+			// $background.css("top", -screenHeight-screenWidth);
+			$icon.attr("status", "close");
+			$shutter.on("transitionend",function(){ if($icon.attr("status") == "close")$shutter.hide();});
+
+			// remove no scroll
+			$(window).off(".noScroll");
+		};
+
+		if($icon.attr("status") == "close") {
+			menuOpen();
+		} else {
+			menuClose();
+		}
+
+		$menuLink.on("click", menuClose);
+
+	});
 
 });
