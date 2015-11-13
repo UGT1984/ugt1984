@@ -113,12 +113,16 @@ header .logo {
   height: 27px;
 }
 
-.menu {
+header .menu {
   float: right;
   padding-top: 40px;
 }
-
-.menu li {
+@media screen and (max-width: 480px) {
+  header .menu {
+    display: none;
+  }
+}
+header .menu li {
   display: inline-block;
   margin-left: 40px;
   font-size: 0.8125rem;
@@ -129,6 +133,8 @@ header .logo {
   font-family: 'Montserrat', Arial, sans-serif;
   position: relative;
 }
+
+/* menu hover animation */
 .menu li a:hover:after {
   width: 105%;
   -webkit-transition: width 0.2s ease-in;
@@ -141,14 +147,77 @@ header .logo {
   display: block;
   background-color: #d0b669;
   position: absolute;
-  top: 7px;
+  top: 50%;
   left: -1px;
   width: 0;
   height: 3px;
+  margin-top: -2px;
   -webkit-transition: width 0.25s ease-in;
   -moz-transition: width 0.25s ease-in;
   -ms-transition: width 0.25s ease-in;
   transition: width 0.25s ease-in;
+}
+
+.menu_icon {
+  display: none;
+  float: right;
+  width: 22px;
+  position: fixed;
+  top:  37px;
+  right: 5%;
+  z-index: 1;
+  padding: 5px;
+}
+@media screen and (max-width: 480px) {
+  .menu_icon {
+    display: block;
+    z-index: 99;
+  }
+}
+.menu_icon div {
+  height: 3px;
+  margin-bottom: 5px;;
+  background-color: #000;
+}
+.menu_icon div:last-child { margin-bottom: 0; }
+
+
+/* shutter menu --------------------------------------------------*/
+
+.menu_shutter {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 480px){
+  .menu_shutter {
+    display: none !important;
+  }
+}
+
+.menu_shutter .menu {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+}
+
+.menu_shutter .menu li {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+}
+.menu_shutter .menu li:last-child { margin-bottom: 0; }
+.menu_shutter .menu li a {
+  display: inline-block;
+  padding: 10px; /* touch area */
+}
+
+.bg_shutter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 
@@ -518,6 +587,11 @@ section {
   float: right;
   opacity: 0;
   color: #d0b669;
+}
+@media screen and (max-width: 768px) {
+  .view_project {
+    display: none;
+  }
 }
 .view_project svg {
   fill: #d0b669;

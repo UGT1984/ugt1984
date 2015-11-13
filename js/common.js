@@ -37,4 +37,14 @@ $(document).ready(function(){
 			$(this).find(".view_project").removeClass("view_on");
 		});
 
+	$(".menu_icon").on("click",function(){
+		$(".menu_shutter").toggle().height(window.outerHeight).width(window.outerWidth);
+
+		var menuHeight = $(".menu_shutter .menu").height();
+		$(".menu_shutter .menu").css("marginTop", -menuHeight/2 + "px");
+		$(".menu_shutter a").on("click", function(){
+			$(".menu_shutter").hide();
+		})
+	})
+
 });
