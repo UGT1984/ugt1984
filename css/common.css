@@ -720,8 +720,14 @@ section {
 
 .title_serif {
   font-size:  3.375rem;
+  line-height: 1.2;
   font-weight: bold;
   font-family: 'Playfair Display', Arial, sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .title_serif {
+    font-size: 2.5rem;
+  }
 }
 
 .work_detail .info {
@@ -749,6 +755,15 @@ section {
 .work_detail .info dd {
   font-family: 'Montserrat', Arial, sans-serif;
 }
+.work_detail .info dd:after {
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both;
+}
 
 .work_detail .follow_text {
   font-size: 0.875rem;
@@ -762,6 +777,11 @@ section {
 .work_gallery .work_img {
   width: 900px;
   margin-top: 35px;
+}
+@media screen and (max-width: 768px){
+  .work_gallery .work_img {
+    width: 100%;
+  }
 }
 
 .work_gallery .work_img img {
