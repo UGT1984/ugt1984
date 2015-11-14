@@ -390,6 +390,12 @@ section {
   -ms-transition: height 0.1s ease-in;
   transition: height 0.1s ease-in;
 }
+@media screen and (max-width: 480px) {
+  .work_container:after {
+    padding: 0 5.264%;
+    left: -5.264%;
+  }
+}
 .work_container:hover:after {
   height: 100%;
   -webkit-transition: height 0.2s ease-in;
